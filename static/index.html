@@ -1,0 +1,8 @@
+  <h1>server time: <span id="clock">00:00:00</span></h1>
+  <script>
+    const ev = new EventSource('/event');
+    ev.addEventListener('message', (e) => {
+      clock.textContent = e.data;
+    });
+  </script>
+
